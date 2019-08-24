@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-// import React from "react";
 import Routing from "./components/routing/Routing";
 import ReactGA from "react-ga";
+import { PageView, initGA } from "./components/tracking/Tracking";
 
 class App extends Component {
-  // function App() {
   componentDidMount() {
     ReactGA.initialize("UA-146365365-1");
+    initGA("UA-146365365-1");
+    PageView();
   }
 
   render() {
