@@ -4,7 +4,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home Page...</h1>
+        <h1>
+          This is Just For Implementation Purpose. So, Don't Mind About UI...
+        </h1>
       </div>
     );
   }
