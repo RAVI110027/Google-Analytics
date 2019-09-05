@@ -1,19 +1,23 @@
 import React, { Component } from "react";
 import Routing from "./components/routing/Routing";
-import ReactGA from "react-ga";
-import { PageView, initGA } from "./components/tracking/Tracking";
+import { initGA } from "./components/tracking/Tracking";
 
 class App extends Component {
   componentDidMount() {
-    ReactGA.initialize("UA-146365365-1");
-    initGA("UA-146365365-1");
-    PageView();
+    initGA();
   }
 
   render() {
     return (
       <div className="App">
         <Routing />
+        <button
+          onClick={() =>
+            Event("PRODUCT", "Product added to cart", "PRODUCT_PAGE")
+          }
+        >
+          Add to Cart
+        </button>
       </div>
     );
   }
