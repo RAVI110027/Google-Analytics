@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactGA from "react-ga";
 import Routing from "./components/routing/Routing";
 import { initGA } from "./components/tracking/Tracking";
 
@@ -12,9 +13,13 @@ class App extends Component {
       <div className="App">
         <Routing />
         <button
-          onClick={() =>
-            Event("PRODUCT", "Product added to cart", "PRODUCT_PAGE")
-          }
+          onClick={() => {
+            ReactGA.event({
+              category: "PRODUCT",
+              action: "Product added to cart",
+              label: "PRODUCT_PAGE"
+            });
+          }}
         >
           Add to Cart
         </button>
